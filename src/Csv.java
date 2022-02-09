@@ -20,7 +20,7 @@ public class Csv {
                 for (int i=0;i<data.length;i++)
                 {
                     if (i == 0)
-                        modifiedArray[lineNum][0] = data[i];
+                        modifiedArray[lineNum][0] = data[i].replaceAll(" ","%20").replace("\"","");
                     else if (i == 1)
                         modifiedArray[lineNum][1] = data[i];
                 }

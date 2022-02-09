@@ -14,10 +14,12 @@ public class Api {
             String line;
             while ((line = in.readLine()) != null){
                 if (line.contains("\"The distance between")){
-//                    distance = line.replace("<meta content=\"", "").replace("&nbsp;kilometers (6,590&nbsp;miles).\" property=\"og:description\">", "");
-                    distance = line;
+                    distance = line.substring(line.lastIndexOf("is") + 3, line.indexOf("kilometers") - 6);
+//                    distance = line;
                 }
             }
+        }catch(Exception e){
+            return null;
         }
         return distance;
     }
